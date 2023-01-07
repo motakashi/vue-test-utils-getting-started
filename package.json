@@ -16,5 +16,16 @@
     "test": "jest"
   },
   "author": "Evan You",
-  "license": "MIT"
+  "license": "MIT",
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": ["**/atom/*.{js,vue}", "!**/tests/**", "!**/node_modules/**"],
+    "coverageReporters": ["html", "text-summary"]
+  }
 }
